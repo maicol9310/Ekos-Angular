@@ -1,0 +1,50 @@
+<!-- main-task.component.html -->
+
+<div class="task-container">
+    <mat-card class="task-card">
+      <mat-card-title>IRIS</mat-card-title>
+      <mat-form-field class="example-form-field">
+        <mat-select [(value)]="tareaSeleccionada">
+          <mat-option [value]="0">All</mat-option>
+          <mat-option *ngFor="let tarea of tareas" [value]="tarea.id">
+            {{ tarea.nombre }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+        <mat-form-field class="example-form-field">
+            <div class="input-container">
+              <input matInput [(ngModel)]="nuevaTarea" type="text">
+              <button mat-icon-button matSuffix color="primary" (click)="agregarTarea()">
+                <mat-icon>add</mat-icon>
+              </button>
+            </div>
+        </mat-form-field>
+      <mat-table class="transparent-table" [dataSource]="tareasFiltradas">
+        <ng-container matColumnDef="isFinished">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let tarea">
+            <mat-checkbox [checked]="tarea.isFinished" (change)="actualizarTarea(tarea.id, $event.checked)"></mat-checkbox>
+          </mat-cell>
+        </ng-container>
+      
+        <ng-container matColumnDef="nombre">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let tarea"> {{ tarea.nombre }} </mat-cell>
+        </ng-container>
+  
+        <ng-container matColumnDef="eliminar">
+          <mat-header-cell *matHeaderCellDef></mat-header-cell>
+          <mat-cell *matCellDef="let tarea">
+            <!-- Agrega un icono para eliminar y un evento clic que llame a la función eliminar -->
+            <button mat-icon-button (click)="eliminarTarea(tarea.id)">
+                <mat-icon color="warn">clear</mat-icon>
+            </button>
+          </mat-cell>
+        </ng-container>
+  
+        <mat-header-row *matHeaderRowDef="['isFinished', 'nombre', 'eliminar']"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: ['isFinished', 'nombre', 'eliminar']"></mat-row>
+      </mat-table>
+    </mat-card>
+  </div>
+  

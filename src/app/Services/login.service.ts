@@ -19,12 +19,12 @@ export class LoginService {
     const credentials = { correo, contraseña };
     return this.http.post<any>(this.apiUrl, credentials).pipe(
       tap((response) => {
-        this.token = response.token;
+        localStorage.setItem('token', response.token);
       })
     );
   }
 
-  getToken(): string {
-    return this.token;
+  getToken(): string | null {
+    return localStorage.getItem('token');
   }
 }

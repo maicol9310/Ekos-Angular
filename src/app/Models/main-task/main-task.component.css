@@ -1,0 +1,64 @@
+
+
+.mat-card-title {
+  background-color: #4caf50; 
+  color: white; 
+  padding: 10px;
+  font-size: 1.5em; 
+  text-align: center; 
+  margin: -16px -16px 16px -16px; 
+}
+
+.task-container {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 50vh; 
+}
+
+.task-card { background-color: #e7e7e7de; 
+  width: 20%; 
+  margin-top: 5%; 
+}
+
+.task-title {
+  font-size: 20px;
+}
+
+.task-row {
+  margin-bottom: 2px; 
+  text-align: center; 
+}
+
+
+.transparent-table {
+  background: transparent;
+  border: none;
+}
+
+.transparent-table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+.mat-cell, .mat-header-cell {
+  border: none;
+}
+
+.mat-header-row, .mat-row {
+  border-bottom: none;
+}
+
+.example-form-field {
+  width: 100%; 
+}
+
+.input-container {
+  display: flex;
+  align-items: center;
+}
+
+.input-container input {
+  flex: 1;
+  margin-right: 8px; 
+}
