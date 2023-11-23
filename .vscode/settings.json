@@ -1,0 +1,8 @@
+{
+    "appService.zipIgnorePattern": [
+        "node_modules{,/**}",
+        ".vscode{,/**}"
+    ],
+    "appService.defaultWebAppToDeploy": "/subscriptions/c9eb66ae-580f-49f9-80f6-bd68853ef618/resourceGroups/DefaultResourceGroup-EUS/providers/Microsoft.Web/sites/ekos-web",
+    "appService.deploySubpath": "."
+}

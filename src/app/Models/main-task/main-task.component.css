@@ -1,64 +1,70 @@
-
-
-.mat-card-title {
-  background-color: #4caf50; 
-  color: white; 
-  padding: 10px;
-  font-size: 1.5em; 
-  text-align: center; 
-  margin: -16px -16px 16px -16px; 
-}
-
+/* Estilos para escritorio */
 .task-container {
   display: flex;
   justify-content: center;
-  align-items: flex-start;
-  height: 50vh; 
+  align-items: center;
 }
 
-.task-card { background-color: #e7e7e7de; 
-  width: 20%; 
-  margin-top: 5%; 
+h1 {
+  font-weight: bold;
 }
 
-.task-title {
-  font-size: 20px;
+.task-card {
+  background-color: #f4f4fa;
+  width: 23%;
+  margin: 5% auto;
+  padding: 20px;
+  position: relative;
 }
 
-.task-row {
-  margin-bottom: 2px; 
-  text-align: center; 
+.task-card-title-container {
+  position: absolute;
+  top: 0;
+  left: 50%; /* Cambiado el left a 50% para centrar el contenedor del título */
+  transform: translateX(-50%); /* Añadido para centrar correctamente el contenedor del título */
+  width: 100%;
+  background-color: #00d2c4;
+  padding: 10px;
+  text-align: center;
+  color: white;
+  box-sizing: border-box;
 }
 
+.task-card-content {
+  margin-top: 20px;
+}
 
 .transparent-table {
   background: transparent;
   border: none;
-}
-
-.transparent-table {
   border-collapse: collapse;
   width: 100%;
 }
 
-.mat-cell, .mat-header-cell {
+.mat-cell {
   border: none;
 }
 
-.mat-header-row, .mat-row {
+.mat-row {
   border-bottom: none;
 }
 
 .example-form-field {
-  width: 100%; 
+  width: 100%;
+  height: auto;
 }
 
-.input-container {
-  display: flex;
-  align-items: center;
+::ng-deep .mat-form-field-appearance-outline .mat-form-field-outline {
+  width: 100%;
+  background-color: white;
+  border-radius: 8px;
 }
 
-.input-container input {
-  flex: 1;
-  margin-right: 8px; 
+/* Estilos para celular */
+@media (max-width: 768px) {
+  .task-card {
+    width: 90%; /* Reduzco el ancho para dispositivos más pequeños */
+  }.task-card-title-container {
+    width: 100%;
+  }
 }
